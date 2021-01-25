@@ -10,9 +10,9 @@ public interface IConverter {
 
     String getStrFromPersons(List<Person> persons) throws IOException;
 
-    public List<Person> getPersonsFromString(String strPersons) throws IOException;
+    List<Person> getPersonsFromString(String strPersons) throws IOException;
 
-    public default List<Person> updateDataInPerson(long id, String fieldToBeUpdated, String valueToUpdate, String strPersons) throws IOException {
+    default List<Person> updateDataInPerson(long id, String fieldToBeUpdated, String valueToUpdate, String strPersons) throws IOException {
         List<Person> persons = getPersonsFromString(strPersons);
         Iterator<Person> iterator = persons.iterator();
         boolean hasID = false;
@@ -50,7 +50,7 @@ public interface IConverter {
         return persons;
     }
 
-    public default List<Person> removePersonsFromList(long id, String strPersons) throws IOException {
+    default List<Person> removePersonsFromList(long id, String strPersons) throws IOException {
         List<Person> persons = getPersonsFromString(strPersons);
         Iterator<Person> iterator = persons.iterator();
         boolean hasID = false;

@@ -1,4 +1,6 @@
 
+*.xml
+
 *.class
 
 *.iml

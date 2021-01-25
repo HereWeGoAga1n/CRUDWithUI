@@ -6,11 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="CRUDWithUI" />
+        <module name="CSV1" />
+        <module name="CSV" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="CRUDWithUI" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
