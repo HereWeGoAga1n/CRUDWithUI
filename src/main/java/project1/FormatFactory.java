@@ -1,10 +1,10 @@
 package project1;
 
-import converter.impl.CSVConverter;
-import converter.impl.XMLConverter;
-import converter.impl.YamlConverter;
+import DataFormatConverter.impl.CSVConverter;
+import DataFormatConverter.impl.XMLConverter;
+import DataFormatConverter.impl.YamlConverter;
 import util.Constants.Format;
-import converter.impl.JasonConverter;
+import DataFormatConverter.impl.JasonConverter;
 import project1.cmd.BinaryFormatCmdProcessor;
 import project1.cmd.Executable;
 import project1.cmd.StringFormatCmdProcessor;

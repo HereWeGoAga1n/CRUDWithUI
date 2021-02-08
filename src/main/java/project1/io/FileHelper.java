@@ -1,7 +1,7 @@
 package project1.io;
 
 import static project1.UserDialogController.fileName;
-
+import static project1.io.SaveData.file;
 import java.io.*;
 
 public class FileHelper {
@@ -33,7 +33,7 @@ public class FileHelper {
 
     public String getFile() throws IOException {
         StringBuilder resultStringBuilder = new StringBuilder();
-        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             String line;
             while ((line = br.readLine()) != null) {
                 resultStringBuilder.append(line).append("\n");

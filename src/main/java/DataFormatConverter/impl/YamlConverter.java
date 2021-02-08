@@ -1,13 +1,12 @@
-package converter.impl;
+package DataFormatConverter.impl;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
-import converter.IConverter;
+import DataFormatConverter.IConverter;
 import project1.model.Person;
 import java.io.IOException;
-import java.util.Iterator;
 import java.util.List;
 
 public class YamlConverter implements IConverter {

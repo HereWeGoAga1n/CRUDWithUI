@@ -20,4 +20,13 @@ public class Constants {
         public final static String SWITCH = "switch";
         public final static String START = "start";
     }
+
+
+    // if these DBs don't have specific formats than it's better to use ENUMs
+    public static class DB {
+        public final static String MY_SQL = "mysql";
+        public final static String MARIA_DB = "mariadb";
+        public final static String POSTGRE_SQL = "postgresql";
+        public final static String MONGO_DB = "mongodb";
+    }
 }

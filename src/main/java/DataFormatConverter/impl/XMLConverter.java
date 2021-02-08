@@ -1,13 +1,12 @@
-package converter.impl;
+package DataFormatConverter.impl;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import converter.IConverter;
+import DataFormatConverter.IConverter;
 import project1.model.Person;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.util.Iterator;
 import java.util.List;
 
 public class XMLConverter implements IConverter {

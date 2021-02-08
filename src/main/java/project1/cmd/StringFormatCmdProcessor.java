@@ -1,12 +1,11 @@
 package project1.cmd;
 
-import converter.IConverter;
+import DataFormatConverter.IConverter;
 import org.json.simple.parser.ParseException;
 import project1.io.FileHelper;
 import project1.model.Person;
 
 import java.io.IOException;
-import java.io.ObjectOutputStream;
 import java.util.List;
 import static project1.UserDialogController.*;
 public class StringFormatCmdProcessor implements Executable {
