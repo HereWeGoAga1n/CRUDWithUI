@@ -1,6 +1,5 @@
-package converter;
+package DataFormatConverter;
 
-import converter.impl.CSVConverter;
 import project1.model.Person;
 import java.io.IOException;
 import java.util.Iterator;

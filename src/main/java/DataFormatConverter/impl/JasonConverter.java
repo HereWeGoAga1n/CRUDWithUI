@@ -1,12 +1,11 @@
-package converter.impl;
+package DataFormatConverter.impl;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import converter.IConverter;
+import DataFormatConverter.IConverter;
 import project1.model.Person;
-import java.io.IOException;
+
 import java.lang.reflect.Type;
-import java.util.Iterator;
 import java.util.List;
 
 public class JasonConverter implements IConverter {

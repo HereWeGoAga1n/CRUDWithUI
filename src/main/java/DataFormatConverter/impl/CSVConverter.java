@@ -1,12 +1,11 @@
-package converter.impl;
+package DataFormatConverter.impl;
 
-import converter.IConverter;
+import DataFormatConverter.IConverter;
 import project1.model.Person;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
