@@ -67,23 +67,25 @@ class MainMenu extends JFrame {
         txtLname.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 txtLnameActionPerformed(evt);
-            }});
+            }
+        });
 
         txtId.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 txtIdActionPerformed(evt);
-            }});
+            }
+        });
 
         jTable.setModel(new DefaultTableModel(
                 new Object[][]{
                 },
                 new String[]{
                         "First Name", "Last Name", "Id Number"
-                })
-        {
+                }) {
             boolean[] canEdit = new boolean[]{
                     false, false, false
             };
+
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit[columnIndex];
             }
@@ -92,7 +94,8 @@ class MainMenu extends JFrame {
         jTable.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent evt) {
                 jTableMouseClicked(evt);
-            }});
+            }
+        });
 
         /*
         jScrollPane1.setViewportView();
