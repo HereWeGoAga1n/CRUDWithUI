@@ -1,0 +1,4 @@
+2021-02-12 00:23:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "USERS" не найдена
+Table "USERS" not found; SQL statement:
+INSERT INTO users (username, email,fullname,) VALUES (?,?,?) [42102-197]
