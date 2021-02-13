@@ -1,5 +1,6 @@
 package ui;
 
+import listeners.DBPanelButtonListener;
 import listeners.FileDBChooserButtonListener;
 import listeners.MainFormButtonListener;
 
@@ -12,6 +13,12 @@ public class FileDBChooserPanel {
     public static JButton fileB;
     public static JButton dbB;
     ActionListener listener;
+    JRadioButton mysqlB;
+    JRadioButton mariadbB;
+    JRadioButton postgresqlB;
+    JRadioButton mangodbB;
+    JPanel dbPanel;
+    JButton okB;
 
     public FileDBChooserPanel() {
         frame = new JFrame();
@@ -35,20 +42,29 @@ public class FileDBChooserPanel {
     }
 
     public void changeToDBPanel(){
-        JPanel dbPanel = new JPanel();
-        JRadioButton mysqlB = new JRadioButton();
-        JRadioButton mariadbB = new JRadioButton();
-        JRadioButton postgresqlB = new JRadioButton();
-        JRadioButton mangodbB = new JRadioButton();
-        panel.add(mysqlB);
-        panel.add(mariadbB);
-        panel.add(postgresqlB);
-        panel.add(mangodbB);
-        panel.setVisible(true);
+        dbPanel = new JPanel();
+        mysqlB = new JRadioButton("MySQL");
+        mariadbB = new JRadioButton("MariaDB");
+        postgresqlB = new JRadioButton("PostgreSQL");
+        mangodbB = new JRadioButton("MangoDB");
+        okB = new JButton("OK");
 
-        frame.removeAll();
-        frame.revalidate();
+        ActionListener listener = new DBPanelButtonListener(okB, dbPanel);
+        okB.addActionListener(listener);
+
+        dbPanel.setBounds(50,50,400,50);
+        dbPanel.add(mysqlB);
+        dbPanel.add(mariadbB);
+        dbPanel.add(postgresqlB);
+        dbPanel.add(mangodbB);
+
+        frame.getContentPane().remove(panel);
+        frame.getContentPane().add(dbPanel);
         frame.repaint();
-        frame.add(dbPanel);
+        frame.getContentPane().invalidate();
+        frame.getContentPane().validate();
+        okB.setBounds(200,100,100,30);
+        frame.add(okB);
+        okB.setVisible(true);
     }
 }

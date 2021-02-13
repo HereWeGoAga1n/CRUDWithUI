@@ -28,7 +28,6 @@ public class FileDBChooserButtonListener implements ActionListener {
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.setAcceptAllFileFilterUsed(false);
             fileChooser.setFileFilter(filter);
-            //вызываем ReadFilePanel
             returnVal = fileChooser.showOpenDialog(new ReadFilePanel());
         } else if (source == dbB){
             fileDBChooserPanel.changeToDBPanel();
