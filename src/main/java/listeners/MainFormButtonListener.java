@@ -1,41 +1,44 @@
 package listeners;
 
-import project1.io.SaveData;
 import ui.FileDBChooserPanel;
-import ui.ReadFilePanel;
-import ui.SomeReadEditUI;
 
 import javax.swing.*;
-import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.sql.SQLException;
-
-import static ui.MainForm.*;
 
 public class MainFormButtonListener implements ActionListener {
-    JButton readB;
-    JButton updateB;
-    JButton createB;
-    JButton removeB;
-    JButton exitB;
+    JButton btnRead;
+    JButton btnUpdate;
+    JButton btnSave;
+    JButton btnDelete;
+    JButton btnExit;
+    JTextField txtId;
+    JTextField txtFname;
+    JTextField txtLname;
+    JTextField txtAge;
+    JTextField txtCity;
     public static int returnVal;
     public static FileDBChooserPanel fileDBChooserPanel;
 
-    public MainFormButtonListener(JButton readB, JButton updateB, JButton createB, JButton removeB, JButton exitB) {
-        this.readB = readB;
-        this.updateB = updateB;
-        this.createB = createB;
-        this.removeB = removeB;
-        this.exitB = exitB;
+    public MainFormButtonListener(JButton btnRead, JButton btnUpdate, JButton btnCreate, JButton btnDelete, JButton btnExit,
+                                  JTextField txtId, JTextField txtFname, JTextField txtLname, JTextField txtAge, JTextField txtCity) {
+        this.btnRead = btnRead;
+        this.btnUpdate = btnUpdate;
+        this.btnSave = btnCreate;
+        this.btnDelete = btnDelete;
+        this.btnExit = btnExit;
+        this.txtId = txtId;
+        this.txtFname = txtFname;
+        this.txtLname = txtLname;
+        this.txtAge = txtAge;
+        this.txtCity = txtCity;
     }
 
 
     @Override
     public void actionPerformed(ActionEvent e) {
         JButton source = (JButton) e.getSource();
-        if (source == readB) {
+        if (source == btnRead) {
             fileDBChooserPanel = new FileDBChooserPanel();
         }
     }

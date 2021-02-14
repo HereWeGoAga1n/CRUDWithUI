@@ -1,5 +1,6 @@
 package listeners;
 
+import ui.ChooseDBPanel;
 import ui.ReadFilePanel;
 
 import javax.swing.*;
@@ -13,6 +14,7 @@ public class FileDBChooserButtonListener implements ActionListener {
     JButton fileB;
     JButton dbB;
     public static int returnVal;
+    ChooseDBPanel chooseDBPanel;
     public FileDBChooserButtonListener(JButton fileB, JButton dbB) {
         this.fileB = fileB;
         this.dbB = dbB;
@@ -28,10 +30,10 @@ public class FileDBChooserButtonListener implements ActionListener {
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.setAcceptAllFileFilterUsed(false);
             fileChooser.setFileFilter(filter);
-            //вызываем ReadFilePanel
             returnVal = fileChooser.showOpenDialog(new ReadFilePanel());
         } else if (source == dbB){
-            fileDBChooserPanel.changeToDBPanel();
+            chooseDBPanel = new ChooseDBPanel();
+            chooseDBPanel.changeToDBPanel();
         }
     }
 }

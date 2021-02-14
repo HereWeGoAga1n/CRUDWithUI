@@ -17,6 +17,7 @@ public class FormatFactory {
     private final Executable yamlExecutable = new StringFormatCmdProcessor(new YamlConverter());
     private final Executable binaryExecutable = new BinaryFormatCmdProcessor();
 
+
     public Executable getInstance(String format) {
         Executable instance;
         switch (format.toLowerCase()) {

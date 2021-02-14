@@ -1,5 +1,6 @@
 package ui;
 
+import listeners.DBPanelButtonListener;
 import listeners.FileDBChooserButtonListener;
 import listeners.MainFormButtonListener;
 
@@ -7,10 +8,10 @@ import javax.swing.*;
 import java.awt.event.ActionListener;
 
 public class FileDBChooserPanel {
-    JFrame frame;
-    JPanel panel;
-    public static JButton fileB;
-    public static JButton dbB;
+    public static JFrame frame;
+    public static JPanel panel;
+    JButton fileB;
+    JButton dbB;
     ActionListener listener;
 
     public FileDBChooserPanel() {
@@ -34,21 +35,5 @@ public class FileDBChooserPanel {
         frame.setVisible(true);
     }
 
-    public void changeToDBPanel(){
-        JPanel dbPanel = new JPanel();
-        JRadioButton mysqlB = new JRadioButton();
-        JRadioButton mariadbB = new JRadioButton();
-        JRadioButton postgresqlB = new JRadioButton();
-        JRadioButton mangodbB = new JRadioButton();
-        panel.add(mysqlB);
-        panel.add(mariadbB);
-        panel.add(postgresqlB);
-        panel.add(mangodbB);
-        panel.setVisible(true);
 
-        frame.removeAll();
-        frame.revalidate();
-        frame.repaint();
-        frame.add(dbPanel);
-    }
 }
