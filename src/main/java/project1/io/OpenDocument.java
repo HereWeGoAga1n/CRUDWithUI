@@ -1,21 +1,30 @@
 package project1.io;
 
 import listeners.ReadFilePanelBL;
+import org.json.simple.parser.ParseException;
+import project1.FormatFactory;
+import project1.cmd.Executable;
+import project1.model.Person;
 import ui.ReadFilePanel;
+import static ui.MainMenu.container;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import static ui.ReadFilePanel.newline;
 import static listeners.MainFormButtonListener.returnVal;
 
-public class SaveData {
+public class OpenDocument {
     JTextArea log;
     JFileChooser fc;
     public static File file;
+    public static String fileName;
 
-    public SaveData(JTextArea log, JFileChooser fc) {
+    public OpenDocument(JTextArea log, JFileChooser fc) {
         this.log = log;
         this.fc = fc;
     }
@@ -33,9 +42,16 @@ public class SaveData {
  //       frame.setVisible(true);
  //   }
 
-    public void openFile() {
+    public void openFile() throws ParseException, IOException, ClassNotFoundException {
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             file = fc.getSelectedFile();
+            fileName = file.getName();
+            String format = fileName.substring(fileName.lastIndexOf("."),fileName.length());
+            FormatFactory formatFactory = new FormatFactory();
+            Executable executable = formatFactory.getInstance(format);
+            List<Person> persons = new ArrayList<>();
+            persons = executable.read();
+            container.getTable().redrawTable();
             //This is where a real application would open the file.
             log.append("Opening: " + file.getName() + "." + newline);
         } else {

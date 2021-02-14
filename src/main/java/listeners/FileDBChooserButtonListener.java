@@ -24,13 +24,14 @@ public class FileDBChooserButtonListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        System.out.println("FileDBChooserButtonListener works");
         JButton source = (JButton) e.getSource();
         if (source == fileB){
             FileNameExtensionFilter filter = new FileNameExtensionFilter("Binary, JSON, CSV, XML, YAML", "json", "csv", "xml", "yaml", "bin");
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.setAcceptAllFileFilterUsed(false);
             fileChooser.setFileFilter(filter);
-            returnVal = fileChooser.showOpenDialog(new ReadFilePanel());
+            fileChooser.showOpenDialog(new ReadFilePanel());
         } else if (source == dbB){
             chooseDBPanel = new ChooseDBPanel();
             chooseDBPanel.changeToDBPanel();

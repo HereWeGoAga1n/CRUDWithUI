@@ -1,15 +1,18 @@
 package ui;
 
+import org.json.simple.parser.ParseException;
 import project1.model.Person;
 import ui.Container;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import static project1.FormatFactory.instance;
 
 public class Table {
 
@@ -26,17 +29,17 @@ public class Table {
     }
 
 
-    public void drawTable() {
+    public void drawTable() throws ParseException, IOException, ClassNotFoundException {
         List<Person> personList;
         if (container.getFileName().equals("")) {
             personList = new ArrayList<>();
         } else {
-        //    personList = container.getFileExecutor().read(container.getFileName());
+            personList = instance.read();
         }
         DefaultTableModel defaultTableModel = new DefaultTableModel(new Object[][]{}, new Object[]{"id", "fname", "lname", "age", "city"});
-    //    for (Person person : personList) {
-    //        defaultTableModel.addRow(new String[]{String.valueOf(person.getId()), person.getFname(), person.getLname(), String.valueOf(person.getAge()), person.getCity()});
-    //    }
+        for (Person person : personList) {
+            defaultTableModel.addRow(new String[]{String.valueOf(person.getId()), person.getFname(), person.getLname(), String.valueOf(person.getAge()), person.getCity()});
+        }
         JTable jTable = new JTable(defaultTableModel);
         jTable.setFillsViewportHeight(true);
         jScrollPane = new JScrollPane(jTable, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
@@ -44,7 +47,7 @@ public class Table {
         jFrame.add(jScrollPane);
     }
 
-    public void redrawTable() {
+    public void redrawTable() throws ParseException, IOException, ClassNotFoundException {
         jFrame.remove(jScrollPane);
         drawTable();
     }

@@ -1,9 +1,11 @@
 package ui;
 
 import listeners.MainFormButtonListener;
+import org.json.simple.parser.ParseException;
 
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
@@ -11,10 +13,11 @@ import javax.swing.border.SoftBevelBorder;
 
 public class MainMenu {
 
+    public static Container container;
 
-    public MainMenu() {
+    public MainMenu() throws ParseException, IOException, ClassNotFoundException {
         JFrame jFrame = new JFrame("CRUD");
-        Container container = new Container(jFrame);
+        container = new Container(jFrame);
 
         JLabel idLabel = new JLabel();
         idLabel.setFont(new Font("Verdana", 0, 12));

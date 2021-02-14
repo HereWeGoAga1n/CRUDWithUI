@@ -16,10 +16,13 @@ import java.sql.SQLException;
 
 public class ConnectionFactory {
 
+    //TO DO: ConnectionFactory should be removed, Format Factory should be used instead!!!!!
+
     Connection connectionToMySQL;
     Connection connectionToMariaDB;
     Connection connectionToPostgreSQL;
     Connection connectionToMongoDB;
+    public static Connection instance;
 
     public ConnectionFactory() throws SQLException {
         connectionToMySQL = DriverManager.getConnection("jdbc:mysql://localhost:3306/persons_db", "root", "dg789H4578J");
@@ -29,7 +32,6 @@ public class ConnectionFactory {
     }
 
     public Connection getInstance(String format) {
-        Connection instance;
         switch (format.toLowerCase()) {
             case DB.MY_SQL:
                 instance = connectionToMySQL;

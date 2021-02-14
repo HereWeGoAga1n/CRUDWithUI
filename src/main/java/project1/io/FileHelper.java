@@ -1,7 +1,7 @@
 package project1.io;
 
 import static project1.UserDialogController.fileName;
-import static project1.io.SaveData.file;
+import static project1.io.OpenDocument.file;
 import java.io.*;
 
 public class FileHelper {

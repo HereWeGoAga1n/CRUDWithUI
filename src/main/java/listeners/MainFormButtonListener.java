@@ -37,6 +37,7 @@ public class MainFormButtonListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        System.out.println("MainFormButtonListener works");
         JButton source = (JButton) e.getSource();
         if (source == btnRead) {
             fileDBChooserPanel = new FileDBChooserPanel();

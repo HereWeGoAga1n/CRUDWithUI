@@ -8,6 +8,13 @@ public class Constants {
         public final static String CSV = "csv";
         public final static String JSON = "json";
         public final static String BINARY = "bin";
+        public final static String MY_SQL = "MySQL";
+        public final static String POSTGRE_SQL = "PostgreSQL";
+        public final static String H2 = "H2";
+        public final static String MONGO_DB = "MongoDB";
+        public final static String REDIS = "Redis";
+        public final static String CASSANDRA = "Cassandra";
+        public final static String NEO_4J = "Neo4J";
     }
 
     public static class Cmd {

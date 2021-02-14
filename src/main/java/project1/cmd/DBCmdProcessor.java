@@ -1,5 +1,6 @@
 package project1.cmd;
 
+import DBConverter.IDBConverter;
 import org.json.simple.parser.ParseException;
 import project1.model.Person;
 import ui.SomeReadEditUI;
@@ -12,6 +13,11 @@ import static ui.SomeReadEditUI.getConnection;
 
 public class DBCmdProcessor implements Executable {
 
+    IDBConverter idbConverter;
+
+    public DBCmdProcessor(IDBConverter idbConverter) {
+        this.idbConverter = idbConverter;
+    }
 
     @Override
     public void create(List<Person> persons) throws IOException, ParseException, ClassNotFoundException {
