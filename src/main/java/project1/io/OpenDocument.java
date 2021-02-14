@@ -43,9 +43,11 @@ public class OpenDocument {
  //   }
 
     public void openFile() throws ParseException, IOException, ClassNotFoundException {
+        System.out.println("open file is working");
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             file = fc.getSelectedFile();
             fileName = file.getName();
+            container.setFileName(fileName);
             String format = fileName.substring(fileName.lastIndexOf("."),fileName.length());
             FormatFactory formatFactory = new FormatFactory();
             Executable executable = formatFactory.getInstance(format);
