@@ -19,7 +19,6 @@ public class DBPanelButtonListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
         for (Component c : dbPanel.getComponents()){
             JRadioButton radioButton = (JRadioButton) c;
             if (radioButton.isSelected()){

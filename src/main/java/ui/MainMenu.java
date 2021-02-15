@@ -1,19 +1,23 @@
 package ui;
 
-import listeners.CreateButtonListener;
-import listeners.Container;
+import listeners.MainFormButtonListener;
+import org.json.simple.parser.ParseException;
+
+import java.awt.*;
+import java.awt.event.ActionListener;
+import java.io.IOException;
 
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.SoftBevelBorder;
-import java.awt.*;
-import java.awt.event.ActionListener;
 
-public class FileCreateChooserPanel {
+public class MainMenu {
 
-    public FileCreateChooserPanel() {
+    public static Container container;
+
+    public MainMenu() throws ParseException, IOException, ClassNotFoundException {
         JFrame jFrame = new JFrame("CRUD");
-        Container container = new Container(jFrame);
+        container = new Container(jFrame);
 
         JLabel idLabel = new JLabel();
         idLabel.setFont(new Font("Verdana", 0, 12));
@@ -63,36 +67,42 @@ public class FileCreateChooserPanel {
         txtCity.setBounds(200, 170, 240, 20);
 
 
-
-
         //DROPDOWN
         // container ,
 
+        JButton btnExit = new JButton("Exit");
 
         JButton btnSave = new JButton();
         btnSave.setText("Create");
         btnSave.setBorder(new SoftBevelBorder(BevelBorder.RAISED));
         btnSave.setIconTextGap(0);
         btnSave.setInheritsPopupMenu(true);
-        btnSave.setBounds(15, 400, 130, 30);
-        ActionListener createButtonListener = new CreateButtonListener(container, txtId, txtFname, txtLname, txtAge, txtCity);
-        btnSave.addActionListener(createButtonListener);
+        btnSave.setBounds(15, 400, 100, 30);
 
+        JButton btnRead = new JButton();
+        btnRead.setText("Read");
+        btnRead.setBorder(new SoftBevelBorder(BevelBorder.RAISED));
+        btnRead.setIconTextGap(0);
+        btnRead.setInheritsPopupMenu(true);
+        btnRead.setBounds(135, 400, 100, 30);
 
         JButton btnUpdate = new JButton();
         btnUpdate.setText("Update");
         btnUpdate.setBorder(new SoftBevelBorder(BevelBorder.RAISED));
-        btnUpdate.setBounds(180, 400, 130, 30);
-//        ActionListener updateButtonListener = new UpdateButtonListener(container, txtId, txtFname, txtLname, txtAge, txtCity);
-//        btnUpdate.addActionListener(updateButtonListener);
+        btnUpdate.setBounds(255, 400, 100, 30);
 
         JButton btnDelete = new JButton();
         btnDelete.setText("Delete");
         btnDelete.setBorder(new SoftBevelBorder(BevelBorder.RAISED));
-        btnDelete.setBounds(345, 400, 130, 30);
-//        ActionListener deleteButtonListener = new DeleteButtonListener(container);
-//        btnDelete.addActionListener(deleteButtonListener);
+        btnDelete.setBounds(375, 400, 100, 30);
 
+        ActionListener mainFormButtonListener = new MainFormButtonListener(btnRead, btnUpdate, btnSave, btnDelete,  btnExit,
+                txtId, txtFname, txtLname, txtAge, txtCity);
+
+        btnSave.addActionListener(mainFormButtonListener);
+        btnRead.addActionListener(mainFormButtonListener);
+        btnUpdate.addActionListener(mainFormButtonListener);
+        btnDelete.addActionListener(mainFormButtonListener);
 
         jFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         jFrame.setTitle("CRUD");
@@ -115,10 +125,10 @@ public class FileCreateChooserPanel {
         jFrame.add(txtAge);
         jFrame.add(txtCity);
         jFrame.add(btnSave);
+        jFrame.add(btnRead);
         jFrame.add(btnUpdate);
         jFrame.add(btnDelete);
         jFrame.setVisible(true);
-//        container.getTable().drawTable();
+        container.getTable().drawTable();
     }
 }
-

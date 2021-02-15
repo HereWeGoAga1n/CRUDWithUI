@@ -1,8 +1,6 @@
 package ui;
 
-import project1.model.Person;
-import listeners.Container;
-import listeners.FileFormatListener;
+import listeners.CreateButtonListener;
 
 
 import java.awt.*;
@@ -38,8 +36,8 @@ public class NameNewFile {
         comboBox.setFont(new Font("Verdana", Font.PLAIN, 11));
         comboBox.setBounds(10, 10, 100, 30);
         comboBox.setAlignmentX(Component.LEFT_ALIGNMENT);
-        ActionListener comboBoxListener = new FileFormatListener(comboBox);
-        comboBox.addActionListener(comboBoxListener);
+//        ActionListener comboBoxListener = new CreateButtonListenner(comboBox);
+//        comboBox.addActionListener(comboBoxListener);
 
         JButton btn = new JButton();
         btn.setText("Continue");
@@ -47,8 +45,9 @@ public class NameNewFile {
         btn.setIconTextGap(0);
         btn.setInheritsPopupMenu(true);
         btn.setBounds(50, 100, 130, 30);
-        ActionListener btnListener = new FileFormatListener(container, filename);
+        ActionListener btnListener = new CreateButtonListener(container, filename, comboBox);
         btn.addActionListener(btnListener);
+        btn.addActionListener(comboBox);
 
 
         jFrame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);

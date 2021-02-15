@@ -8,17 +8,11 @@ import javax.swing.*;
 import java.awt.event.ActionListener;
 
 public class FileDBChooserPanel {
-    JFrame frame;
-    JPanel panel;
-    public static JButton fileB;
-    public static JButton dbB;
+    public static JFrame frame;
+    public static JPanel panel;
+    JButton fileB;
+    JButton dbB;
     ActionListener listener;
-    JRadioButton mysqlB;
-    JRadioButton mariadbB;
-    JRadioButton postgresqlB;
-    JRadioButton mangodbB;
-    JPanel dbPanel;
-    JButton okB;
 
     public FileDBChooserPanel() {
         frame = new JFrame();
@@ -41,32 +35,5 @@ public class FileDBChooserPanel {
         frame.setVisible(true);
     }
 
-    public void changeToDBPanel(){
-        dbPanel = new JPanel();
-        mysqlB = new JRadioButton("MySQL");
-        mariadbB = new JRadioButton("MariaDB");
-        postgresqlB = new JRadioButton("PostgreSQL");
-        mangodbB = new JRadioButton("MangoDB");
-        okB = new JButton("OK");
 
-
-
-        ActionListener listener = new DBPanelButtonListener(okB, dbPanel);
-        okB.addActionListener(listener);
-
-        dbPanel.setBounds(50,50,400,50);
-        dbPanel.add(mysqlB);
-        dbPanel.add(mariadbB);
-        dbPanel.add(postgresqlB);
-        dbPanel.add(mangodbB);
-
-        frame.getContentPane().remove(panel);
-        frame.getContentPane().add(dbPanel);
-        frame.repaint();
-        frame.getContentPane().invalidate();
-        frame.getContentPane().validate();
-        okB.setBounds(200,100,100,30);
-        frame.add(okB);
-        okB.setVisible(true);
-    }
 }

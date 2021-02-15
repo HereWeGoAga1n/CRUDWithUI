@@ -1,27 +1,34 @@
 package listeners;
 
+import org.json.simple.parser.ParseException;
 import project1.model.Person;
-import ui.CRUDmenu;
-import ui.NameNewFile;
+import ui.Container;
+import ui.MainMenu;
+import ui.WarningWindow;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class CreateButtonListener implements ActionListener {
+    JTextField fileName;
+    JComboBox comboBox;
+    Container container;
+    JTextField txtId;
+    JTextField txtFname;
+    JTextField txtLname;
+    JTextField txtAge;
+    JTextField txtCity;
 
-    //ToDo получение fileName и Executor с Container получение с полей их значения и создание новой
-    // персоный с этими значениями и выполнение метода extcutor.create и container.getTable.redrawTable()
-    private final Container container;
-    private final JTextField txtId;
-    private final JTextField txtFname;
-    private final JTextField txtLname;
-    private final JTextField txtAge;
-    private final JTextField txtCity;
-
-    public CreateButtonListener(Container container, JTextField txtId, JTextField txtFname, JTextField txtLname, JTextField txtAge, JTextField txtCity) {
+    public CreateButtonListener(Container container, JTextField filename, JComboBox comboBox) {
+        this.comboBox = comboBox;
+        this.fileName = filename;
         this.container = container;
+    }
+
+    public CreateButtonListener(JTextField txtId, JTextField txtFname, JTextField txtLname, JTextField txtAge, JTextField txtCity) {
         this.txtId = txtId;
         this.txtFname = txtFname;
         this.txtLname = txtLname;
@@ -29,10 +36,10 @@ public class CreateButtonListener implements ActionListener {
         this.txtCity = txtCity;
     }
 
-
     @Override
     public void actionPerformed(ActionEvent e) {
-        Person person = createPerson();
+        ArrayList<Person> personList = new ArrayList<Person>();
+        Person person = new Person();
         try{
             person.setId(Integer.parseInt(txtId.getText()));
             person.setFname(txtFname.getText());
@@ -40,25 +47,7 @@ public class CreateButtonListener implements ActionListener {
             person.setAge(Integer.parseInt(txtAge.getText()));
             person.setCity(txtCity.getText());
         }catch (NullPointerException x){
-            CRUDmenu mm = new CRUDmenu();
+            WarningWindow warningWindow = new WarningWindow();
         }
-        if(container.getPersonList() == null){
-            ArrayList<Person> personList = new ArrayList();
-            personList.add(person);
-            container.setPersonList(personList);
-        }else{
-            ArrayList personList = container.getPersonList();
-            personList.add(person);
-        }
-
-
-        NameNewFile nameNewFile = new NameNewFile();
-
-
-    }
-
-
-    private Person createPerson(){
-        return new Person();
     }
 }

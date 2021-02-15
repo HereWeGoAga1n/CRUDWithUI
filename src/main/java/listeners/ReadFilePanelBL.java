@@ -1,20 +1,25 @@
 package listeners;
 
-import project1.io.SaveData;
+import org.json.simple.parser.ParseException;
+import project1.io.OpenDocument;
+import ui.ReadFilePanel;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.IOException;
+
 import static ui.ReadFilePanel.newline;
 
 public class ReadFilePanelBL extends JPanel implements ActionListener {
     JButton openButton, saveButton;
     JTextArea log;
     JFileChooser fc;
-    SaveData saveData;
+    OpenDocument saveData;
 
     public ReadFilePanelBL(JButton openButton, JButton saveButton, JTextArea log, JFileChooser fc) {
+        System.out.println("ReadFilePanel was created");
         this.openButton = openButton;
         this.saveButton = saveButton;
         this.log = log;
@@ -23,9 +28,18 @@ public class ReadFilePanelBL extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        System.out.println("ReadFilePanelBL works");
         if (e.getSource() == openButton) {
-            saveData = new SaveData(log, fc);
-            saveData.openFile();
+            saveData = new OpenDocument(log, fc);
+            try {
+                saveData.openFile();
+            } catch (ParseException parseException) {
+                parseException.printStackTrace();
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            } catch (ClassNotFoundException classNotFoundException) {
+                classNotFoundException.printStackTrace();
+            }
 
         } else if (e.getSource() == saveButton) {
             int returnVal = fc.showSaveDialog(ReadFilePanelBL.this);

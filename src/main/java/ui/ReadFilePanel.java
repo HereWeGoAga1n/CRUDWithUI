@@ -15,6 +15,7 @@ public class ReadFilePanel extends JPanel {
 
     public ReadFilePanel() {
         super(new BorderLayout());
+        System.out.println("Read file panel works");
 
         log = new JTextArea(5,20);
         log.setMargin(new Insets(5,5,5,5));
@@ -27,6 +28,7 @@ public class ReadFilePanel extends JPanel {
 
         openButton = new JButton("Open a File...");
         openButton.addActionListener(listener);
+        System.out.println("Action listener was added");
 
         saveButton = new JButton("Save a File...");
         saveButton.addActionListener(listener);
