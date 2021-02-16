@@ -18,6 +18,7 @@ public class OpenDocument {
     JFileChooser fc;
     public static File file;
     public static String fileName;
+    public static Executable executable;
 
     public OpenDocument(JFileChooser fc) {
         this.fc = fc;
@@ -42,7 +43,7 @@ public class OpenDocument {
         container.setFileName(fileName);
         String format = fileName.substring(fileName.lastIndexOf("."), fileName.length());
         FormatFactory formatFactory = new FormatFactory();
-        Executable executable = formatFactory.getInstance(format);
+        executable = formatFactory.getInstance(format);
         List<Person> persons = new ArrayList<>();
         persons = executable.read();
         container.getTable().redrawTable();

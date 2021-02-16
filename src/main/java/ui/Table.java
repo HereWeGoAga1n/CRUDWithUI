@@ -50,10 +50,11 @@ public class Table {
         jFrame.add(jScrollPane);
     }
 
-    public void getActiveRow(){
+    public long getActiveRow(){
         int row = jTable.getSelectedRow();
         long id = Long.parseLong((String) jTable.getValueAt(row, 0));
         System.out.println(id);
+        return id;
     }
 
     public void redrawTable() throws ParseException, IOException, ClassNotFoundException {

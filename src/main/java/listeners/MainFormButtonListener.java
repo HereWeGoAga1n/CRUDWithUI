@@ -1,11 +1,15 @@
 package listeners;
 
+import org.json.simple.parser.ParseException;
 import ui.FileDBChooserPanel;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+
 import static ui.Container.table;
+import static project1.io.OpenDocument.executable;
 
 public class MainFormButtonListener implements ActionListener {
     JButton btnRead;
@@ -42,8 +46,16 @@ public class MainFormButtonListener implements ActionListener {
         if (source == btnRead) {
             fileDBChooserPanel = new FileDBChooserPanel();
         } else if (source == btnDelete){
-            table.getActiveRow();
-            
+            long id = table.getActiveRow();
+            try {
+                executable.delete(id);
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            } catch (ParseException parseException) {
+                parseException.printStackTrace();
+            } catch (ClassNotFoundException classNotFoundException) {
+                classNotFoundException.printStackTrace();
+            }
         }
     }
 }
