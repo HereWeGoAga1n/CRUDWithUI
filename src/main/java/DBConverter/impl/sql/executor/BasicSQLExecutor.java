@@ -2,7 +2,7 @@ package DBConverter.impl.sql.executor;
 
 import DBConverter.IDBConverter;
 
-import project1.model.Person;
+import project2.model.Person;
 
 import java.sql.*;
 import java.util.ArrayList;

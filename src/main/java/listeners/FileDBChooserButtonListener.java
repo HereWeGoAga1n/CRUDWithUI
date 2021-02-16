@@ -1,7 +1,7 @@
 package listeners;
 
 import org.json.simple.parser.ParseException;
-import project1.io.OpenDocument;
+import project2.io.OpenDocument;
 import ui.ChooseDBPanel;
 
 import javax.swing.*;

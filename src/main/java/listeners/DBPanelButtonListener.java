@@ -1,6 +1,6 @@
 package listeners;
 
-import project1.ConnectionFactory;
+import project2.ConnectionFactory;
 
 import javax.swing.*;
 import java.awt.*;

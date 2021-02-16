@@ -1,15 +1,14 @@
-package project1;
+package project2;
 
 import dialog.UserDialog;
 import org.json.simple.parser.ParseException;
-import project1.cmd.Executable;
-import project1.io.FileHelper;
-import project1.model.Person;
+import project2.cmd.Executable;
+import project2.io.FileHelper;
+import project2.model.Person;
 import util.Constants.Cmd;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.lang.instrument.IllegalClassFormatException;
 import java.util.*;
 
 public class UserDialogController {

@@ -1,20 +1,15 @@
 package ui;
 
 import org.json.simple.parser.ParseException;
-import project1.model.Person;
-import ui.Container;
+import project2.model.Person;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import java.awt.event.ActionListener;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
 
-import static project1.FormatFactory.instance;
+import static project2.FormatFactory.instance;
 
 public class Table {
 

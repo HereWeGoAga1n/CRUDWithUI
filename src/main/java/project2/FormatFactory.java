@@ -1,4 +1,4 @@
-package project1;
+package project2;
 
 import DBConverter.impl.nosql.Cassandra;
 import DBConverter.impl.nosql.MongoDB;
@@ -10,12 +10,12 @@ import DBConverter.impl.sql.PostgreSQL;
 import data_format_converter.impl.CSVConverter;
 import data_format_converter.impl.XMLConverter;
 import data_format_converter.impl.YamlConverter;
-import project1.cmd.DBCmdProcessor;
+import project2.cmd.DBCmdProcessor;
 import util.Constants.Format;
 import data_format_converter.impl.JasonConverter;
-import project1.cmd.BinaryFormatCmdProcessor;
-import project1.cmd.Executable;
-import project1.cmd.StringFormatCmdProcessor;
+import project2.cmd.BinaryFormatCmdProcessor;
+import project2.cmd.Executable;
+import project2.cmd.StringFormatCmdProcessor;
 
 public class FormatFactory {
 

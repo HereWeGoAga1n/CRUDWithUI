@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 
 import static ui.Container.table;
-import static project1.io.OpenDocument.executable;
+import static project2.io.OpenDocument.executable;
 
 public class MainFormButtonListener implements ActionListener {
     JButton btnRead;

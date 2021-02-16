@@ -1,7 +1,7 @@
 package DBConverter.impl.nosql;
 
 import DBConverter.IDBConverter;
-import project1.model.Person;
+import project2.model.Person;
 
 import java.util.List;
 

@@ -1,7 +1,6 @@
 package ui;
 
-import project1.ConnectionFactory;
-import project1.FormatFactory;
+import project2.ConnectionFactory;
 
 import java.sql.Connection;
 import java.sql.SQLException;

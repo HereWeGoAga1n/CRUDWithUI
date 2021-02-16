@@ -3,7 +3,7 @@ package data_format_converter.impl;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import data_format_converter.IConverter;
-import project1.model.Person;
+import project2.model.Person;
 
 import java.lang.reflect.Type;
 import java.util.List;

@@ -1,7 +1,7 @@
 package data_format_converter.impl;
 
 import data_format_converter.IConverter;
-import project1.model.Person;
+import project2.model.Person;
 
 import java.io.IOException;
 import java.util.ArrayList;
