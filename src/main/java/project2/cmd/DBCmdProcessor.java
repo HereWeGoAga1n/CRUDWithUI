@@ -1,15 +1,14 @@
-package project1.cmd;
+package project2.cmd;
 
 import DBConverter.IDBConverter;
 import org.json.simple.parser.ParseException;
-import project1.model.Person;
+import project2.model.Person;
 import ui.SomeReadEditUI;
 
 import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import static ui.SomeReadEditUI.getConnection;
 
 public class DBCmdProcessor implements Executable {
 

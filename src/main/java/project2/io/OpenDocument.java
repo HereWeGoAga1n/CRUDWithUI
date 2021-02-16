@@ -1,9 +1,9 @@
-package project1.io;
+package project2.io;
 
 import org.json.simple.parser.ParseException;
-import project1.FormatFactory;
-import project1.cmd.Executable;
-import project1.model.Person;
+import project2.FormatFactory;
+import project2.cmd.Executable;
+import project2.model.Person;
 
 import static ui.MainMenu.container;
 

@@ -1,7 +1,7 @@
-package project1.io;
+package project2.io;
 
-import static project1.UserDialogController.fileName;
-import static project1.io.OpenDocument.file;
+import static project2.UserDialogController.fileName;
+import static project2.io.OpenDocument.file;
 import java.io.*;
 
 public class FileHelper {

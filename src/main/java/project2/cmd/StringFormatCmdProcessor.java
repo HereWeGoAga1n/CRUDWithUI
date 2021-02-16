@@ -1,13 +1,13 @@
-package project1.cmd;
+package project2.cmd;
 
 import data_format_converter.IConverter;
 import org.json.simple.parser.ParseException;
-import project1.io.FileHelper;
-import project1.model.Person;
+import project2.io.FileHelper;
+import project2.model.Person;
 
 import java.io.IOException;
 import java.util.List;
-import static project1.UserDialogController.*;
+import static project2.UserDialogController.*;
 public class StringFormatCmdProcessor implements Executable {
     FileHelper fileHelper = new FileHelper();
     IConverter converter;

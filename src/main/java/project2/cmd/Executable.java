@@ -1,14 +1,14 @@
-package project1.cmd;
+package project2.cmd;
 
 import org.json.simple.parser.ParseException;
-import project1.io.FileHelper;
-import project1.model.Person;
+import project2.io.FileHelper;
+import project2.model.Person;
 
 import java.io.IOException;
 import java.util.List;
 
-import static project1.UserDialogController.isFileDataDownloaded;
-import static project1.UserDialogController.personsBeforeSave;
+import static project2.UserDialogController.isFileDataDownloaded;
+import static project2.UserDialogController.personsBeforeSave;
 
 public interface Executable {
 

@@ -1,16 +1,14 @@
-package project1.cmd;
+package project2.cmd;
 
 import org.json.simple.parser.ParseException;
-import project1.model.Person;
-import static project1.UserDialogController.*;
+import project2.model.Person;
+import static project2.UserDialogController.*;
 
-import static project1.UserDialogController.fileName;
+import static project2.UserDialogController.fileName;
 
 import java.io.*;
 import java.util.Iterator;
 import java.util.List;
-
-import static project1.UserDialogController.fileName;
 
 public class BinaryFormatCmdProcessor implements Executable {
 
