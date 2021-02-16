@@ -26,7 +26,6 @@ public class FileDBChooserButtonListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println("FileDBChooserButtonListener works");
         JButton source = (JButton) e.getSource();
         if (source == fileB){
             FileNameExtensionFilter filter = new FileNameExtensionFilter("Binary, JSON, CSV, XML, YAML", "json", "csv", "xml", "yaml", "bin");

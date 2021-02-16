@@ -5,6 +5,7 @@ import ui.FileDBChooserPanel;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import static ui.Container.table;
 
 public class MainFormButtonListener implements ActionListener {
     JButton btnRead;
@@ -37,12 +38,12 @@ public class MainFormButtonListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println("MainFormButtonListener works");
         JButton source = (JButton) e.getSource();
         if (source == btnRead) {
             fileDBChooserPanel = new FileDBChooserPanel();
         } else if (source == btnDelete){
-
+            table.getActiveRow();
+            
         }
     }
 }

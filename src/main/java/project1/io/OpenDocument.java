@@ -13,7 +13,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static ui.ReadFilePanel.newline;
 
 public class OpenDocument {
     JFileChooser fc;

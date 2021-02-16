@@ -7,7 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="CSV1" />
-        <module name="CSV" />
+        <module name="HWGA" />
       </profile>
     </annotationProcessing>
   </component>

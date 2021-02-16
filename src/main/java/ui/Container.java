@@ -8,7 +8,7 @@ import javax.swing.*;
 import java.lang.reflect.Executable;
 
 public class Container {
-    private final Table table;
+    public static Table table = null;
     private String fileName = "";
     private FileHelper fileExecutor;
 

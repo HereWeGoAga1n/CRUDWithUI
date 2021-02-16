@@ -12,6 +12,8 @@ import java.sql.Connection;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
+
 import static project1.FormatFactory.instance;
 
 public class Table {
@@ -21,6 +23,7 @@ public class Table {
     private final Container container;
     private JScrollPane jScrollPane;
     DefaultTableModel defaultTableModel;
+    JTable jTable;
 
     public Table(JFrame jFrame, Container container) {
         this.jFrame = jFrame;
@@ -40,11 +43,17 @@ public class Table {
         for (Person person : personList) {
             defaultTableModel.addRow(new String[]{String.valueOf(person.getId()), person.getFname(), person.getLname(), String.valueOf(person.getAge()), person.getCity()});
         }
-        JTable jTable = new JTable(defaultTableModel);
+        jTable = new JTable(defaultTableModel);
         jTable.setFillsViewportHeight(true);
         jScrollPane = new JScrollPane(jTable, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
         jScrollPane.setBounds(15, 200, 465, 185);
         jFrame.add(jScrollPane);
+    }
+
+    public void getActiveRow(){
+        int row = jTable.getSelectedRow();
+        long id = Long.parseLong((String) jTable.getValueAt(row, 0));
+        System.out.println(id);
     }
 
     public void redrawTable() throws ParseException, IOException, ClassNotFoundException {
