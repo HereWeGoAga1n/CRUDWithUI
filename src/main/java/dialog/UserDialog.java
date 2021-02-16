@@ -1,6 +1,6 @@
 package dialog;
 
-import project1.model.Person;
+import project2.model.Person;
 
 import java.util.*;
 
@@ -11,18 +11,20 @@ public class UserDialog {
         long personNumber = scanner.nextLong();
         int personCounter = 1;
         List<Person> people = new ArrayList<>();
-        int id = 0;
+        long id = 0;
         String firstName = "";
         String lastName = "";
         int age = 0;
         String city = "";
         while (personNumber > 0) {
             System.out.print("Введите айди персоны №"+personCounter+" :");
-            if (scanner.hasNextInt()) {
-                id = scanner.nextInt();
-            } else {
-                System.out.println("Некорректные данные, попробуйте заново");
-                typePersonData();
+            while (true) {
+                try {
+                    id = Long.parseLong(scanner.nextLine());
+                    break;
+                } catch (IllegalArgumentException e) {
+                    System.out.println("Введенный id не найден.");
+                }
             }
             System.out.print("Введите имя персоны №"+personCounter+" :");
             if (scanner.hasNextLine()) {
