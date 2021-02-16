@@ -1,6 +1,6 @@
-package DataFormatConverter.impl;
+package data_format_converter.impl;
 
-import DataFormatConverter.IConverter;
+import data_format_converter.IConverter;
 import project1.model.Person;
 
 import java.io.IOException;

@@ -1,10 +1,10 @@
-package DataFormatConverter.impl;
+package data_format_converter.impl;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
-import DataFormatConverter.IConverter;
+import data_format_converter.IConverter;
 import project1.model.Person;
 import java.io.IOException;
 import java.util.List;

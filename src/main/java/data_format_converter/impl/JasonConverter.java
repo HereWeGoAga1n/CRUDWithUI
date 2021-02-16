@@ -1,8 +1,8 @@
-package DataFormatConverter.impl;
+package data_format_converter.impl;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import DataFormatConverter.IConverter;
+import data_format_converter.IConverter;
 import project1.model.Person;
 
 import java.lang.reflect.Type;

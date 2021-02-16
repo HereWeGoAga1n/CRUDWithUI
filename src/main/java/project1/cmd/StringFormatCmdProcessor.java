@@ -1,6 +1,6 @@
 package project1.cmd;
 
-import DataFormatConverter.IConverter;
+import data_format_converter.IConverter;
 import org.json.simple.parser.ParseException;
 import project1.io.FileHelper;
 import project1.model.Person;
@@ -37,7 +37,7 @@ public class StringFormatCmdProcessor implements Executable {
 
     @Override
     public void delete(long id) throws IOException, ParseException, ClassNotFoundException {
-        isFileDataDownloaded(isFileDataDownloaded);
+     //   isFileDataDownloaded(isFileDataDownloaded);
         String content = converter.getStrFromPersons(personsBeforeSave);
         personsBeforeSave = converter.removePersonsFromList(id, content);
     }

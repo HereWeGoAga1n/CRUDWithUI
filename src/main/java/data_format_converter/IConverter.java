@@ -1,4 +1,4 @@
-package DataFormatConverter;
+package data_format_converter;
 
 import project1.model.Person;
 import java.io.IOException;

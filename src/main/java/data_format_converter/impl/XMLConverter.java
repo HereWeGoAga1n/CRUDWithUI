@@ -1,8 +1,8 @@
-package DataFormatConverter.impl;
+package data_format_converter.impl;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import DataFormatConverter.IConverter;
+import data_format_converter.IConverter;
 import project1.model.Person;
 
 import java.io.ByteArrayOutputStream;
