@@ -3,11 +3,11 @@ package util;
 public class Constants {
 
     public static class Format {
-        public final static String XML = "xml";
-        public final static String YAML = "yaml";
-        public final static String CSV = "csv";
-        public final static String JSON = "json";
-        public final static String BINARY = "bin";
+        public final static String XML = ".xml";
+        public final static String YAML = ".yaml";
+        public final static String CSV = ".csv";
+        public final static String JSON = ".json";
+        public final static String BINARY = ".bin";
         public final static String MY_SQL = "MySQL";
         public final static String POSTGRE_SQL = "PostgreSQL";
         public final static String H2 = "H2";

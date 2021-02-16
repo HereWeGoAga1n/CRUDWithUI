@@ -2,7 +2,6 @@ package listeners;
 
 import org.json.simple.parser.ParseException;
 import project1.io.OpenDocument;
-import ui.ReadFilePanel;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -13,13 +12,13 @@ import java.io.IOException;
 import static ui.ReadFilePanel.newline;
 
 public class ReadFilePanelBL extends JPanel implements ActionListener {
-    JButton openButton, saveButton;
+    JButton openButton;
+    JButton saveButton;
     JTextArea log;
     JFileChooser fc;
     OpenDocument saveData;
 
     public ReadFilePanelBL(JButton openButton, JButton saveButton, JTextArea log, JFileChooser fc) {
-        System.out.println("ReadFilePanel was created");
         this.openButton = openButton;
         this.saveButton = saveButton;
         this.log = log;
@@ -30,7 +29,7 @@ public class ReadFilePanelBL extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         System.out.println("ReadFilePanelBL works");
         if (e.getSource() == openButton) {
-            saveData = new OpenDocument(log, fc);
+            saveData = new OpenDocument(fc);
             try {
                 saveData.openFile();
             } catch (ParseException parseException) {

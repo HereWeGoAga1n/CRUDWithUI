@@ -20,7 +20,7 @@ public class Table {
     private final JFrame jFrame;
     private final Container container;
     private JScrollPane jScrollPane;
-
+    DefaultTableModel defaultTableModel;
 
     public Table(JFrame jFrame, Container container) {
         this.jFrame = jFrame;
@@ -36,7 +36,7 @@ public class Table {
         } else {
             personList = instance.read();
         }
-        DefaultTableModel defaultTableModel = new DefaultTableModel(new Object[][]{}, new Object[]{"id", "fname", "lname", "age", "city"});
+       defaultTableModel  = new DefaultTableModel(new Object[][]{}, new Object[]{"id", "fname", "lname", "age", "city"});
         for (Person person : personList) {
             defaultTableModel.addRow(new String[]{String.valueOf(person.getId()), person.getFname(), person.getLname(), String.valueOf(person.getAge()), person.getCity()});
         }

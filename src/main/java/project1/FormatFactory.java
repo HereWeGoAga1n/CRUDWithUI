@@ -72,7 +72,7 @@ public class FormatFactory {
                 instance = redisExecutable;
                 break;
             default:
-                throw new IllegalArgumentException("Данная программа не работает введенным форматом.\n");
+                throw new IllegalArgumentException("Данная программа не работает с форматом\n" + format);
         }
         return instance;
     }

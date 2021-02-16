@@ -41,6 +41,8 @@ public class MainFormButtonListener implements ActionListener {
         JButton source = (JButton) e.getSource();
         if (source == btnRead) {
             fileDBChooserPanel = new FileDBChooserPanel();
+        } else if (source == btnDelete){
+
         }
     }
 }
